@@ -497,26 +497,34 @@ function filterArtikel(kategori, btnEl) {
  * @param {HTMLElement} btn - tombol baca yang diklik
  */
 function toggleArtikelFull(btn) {
-  // Cari elemen artikel-full terdekat
-  const artikelBody = btn.closest('.artikel-body');
-  const fullContent  = artikelBody.querySelector('.artikel-full');
+  const artikelBody = btn.closest(".artikel-body");
+  const full = artikelBody.querySelector(".artikel-full");
+  const selanjutnyaBtn = artikelBody.querySelector(".btn-selanjutnya");
+  const tutupBtn = artikelBody.querySelector(".btn-tutup-footer");
 
-  if (!fullContent) return;
+  if (!full) return;
 
-  const isOpen = fullContent.style.display === 'block';
+  if (full.classList.contains("show")) {
+    full.classList.remove("show");
+    full.scrollTop = 0;
 
-  if (isOpen) {
-    // Tutup
-    fullContent.style.display = 'none';
-    // Kembalikan tombol "Baca"
-    const readBtn = artikelBody.querySelector('.btn-baca');
-    if (readBtn) readBtn.style.display = 'inline-flex';
+    if (selanjutnyaBtn) {
+      selanjutnyaBtn.style.display = "inline";
+    }
+
+    if (tutupBtn) {
+      tutupBtn.style.display = "none";
+    }
   } else {
-    // Buka
-    fullContent.style.display = 'block';
-    // Sembunyikan tombol "Baca" (tombol tutup ada di dalam fullContent)
-    const readBtn = artikelBody.querySelector('.btn-baca');
-    if (readBtn) readBtn.style.display = 'none';
+    full.classList.add("show");
+
+    if (selanjutnyaBtn) {
+      selanjutnyaBtn.style.display = "none";
+    }
+
+    if (tutupBtn) {
+      tutupBtn.style.display = "inline-flex";
+    }
   }
 }
 
