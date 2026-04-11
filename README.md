@@ -1,4 +1,3 @@
-Berikut README yang bisa langsung kamu pakai untuk GitHub. Sudah aku susun rapi, jelas, dan cocok untuk project kamu 👇
 
 ---
 
