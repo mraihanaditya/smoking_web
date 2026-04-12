@@ -361,7 +361,7 @@ const organData = {
                   <path d="M12.33 2.80225C6.78 4.59225 0.25 3.00224 0.25 3.00224L12.33 2.80225Z" fill="white"/>
                   <path d="M12.33 2.80225C6.78 4.59225 0.25 3.00224 0.25 3.00224" stroke="#263238" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>`,
-    nama: 'Kulit, Gigi & Penampilan',
+    nama: 'Kulit, Gigi & mulut',
     risk: 'Risiko Terlihat',
     desc: 'Dampak rokok pada penampilan adalah yang paling terlihat secara langsung. Nikotin menyempitkan pembuluh darah kulit, mengurangi pasokan oksigen, dan mempercepat penuaan. Tar menodai gigi dan mulut secara permanen.',
     stat1Val: '10 thn', stat1Label: 'Kulit terlihat lebih tua',
