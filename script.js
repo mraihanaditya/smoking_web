@@ -698,7 +698,62 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================
-// 11. LOG SELAMAT DATANG DI CONSOLE
+// 11. EFEK SUARA (AUDIO FEEDBACK)
+// ============================================================
+
+// Menggunakan aset suara gratis dari Google Actions
+const sfxHeartbeat = new Audio('https://actions.google.com/sounds/v1/human_voices/heartbeat.ogg');
+const sfxCough = new Audio('https://actions.google.com/sounds/v1/human_voices/male_cough.ogg');
+const sfxCoins = new Audio('https://actions.google.com/sounds/v1/office/coins_clinking.ogg');
+
+sfxHeartbeat.volume = 0.6;
+sfxHeartbeat.loop = true; // Jantung berdetak berulang saat di-hover
+sfxCough.volume = 0.8;
+sfxCoins.volume = 0.6;
+
+// Fungsi untuk memainkan suara dengan aman (mencegah error autoplay browser)
+function playSound(audioEl) {
+  audioEl.currentTime = 0;
+  audioEl.play().catch(err => {
+    console.warn("Browser mencegah pemutaran audio otomatis. User harus berinteraksi (klik) di halaman terlebih dahulu.", err);
+  });
+}
+
+function stopSound(audioEl) {
+  audioEl.pause();
+  audioEl.currentTime = 0;
+}
+
+// 1. Suara Koin pada tombol Kalkulator
+const btnHitung = document.querySelector('.btn-hitung');
+if (btnHitung) {
+  // Tambahkan event listener tanpa mengganggu onclick bawaan HTML
+  btnHitung.addEventListener('click', () => {
+    playSound(sfxCoins);
+  });
+}
+
+// 2. Suara Paru-paru & Jantung saat Hover Peta Tubuh
+document.querySelectorAll('.organ-group').forEach(group => {
+  const organKey = group.getAttribute('data-organ');
+
+  group.addEventListener('mouseenter', () => {
+    if (organKey === 'jantung') {
+      playSound(sfxHeartbeat);
+    } else if (organKey === 'paru') {
+      playSound(sfxCough);
+    }
+  });
+
+  group.addEventListener('mouseleave', () => {
+    if (organKey === 'jantung') {
+      stopSound(sfxHeartbeat); // Matikan suara jantung saat cursor keluar
+    }
+  });
+});
+
+// ============================================================
+// 12. LOG SELAMAT DATANG DI CONSOLE
 // ============================================================
 console.log('%c🚭 BerhentiSekarang', 'color:#c0392b;font-size:20px;font-weight:bold;font-family:serif;');
 console.log('%cWebsite Edukasi Bahaya Merokok | Tugas Multimedia', 'color:#27ae60;font-size:12px;');
