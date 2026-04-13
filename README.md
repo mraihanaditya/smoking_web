@@ -49,12 +49,12 @@ Setiap artikel dibuat dalam bentuk **card interaktif** dengan fitur:
 
 Data diambil dari sumber terpercaya seperti:
 
-* WHO
-* Kemenkes RI
-* CDC
-* Alodokter
-* KlikDokter
-* Universitas Airlangga
+* [WHO](https://www.who.int/news-room/fact-sheets/detail/tobacco)
+* [Kemenkes RI](https://www.kemkes.go.id)
+* [CDC](https://www.cdc.gov)
+* [Alodokter](https://www.alodokter.com)
+* [KlikDokter](https://www.klikdokter.com)
+* [Universitas Airlangga](https://www.unair.ac.id)
 
 ---
 
@@ -70,7 +70,7 @@ Data diambil dari sumber terpercaya seperti:
 
 ```bash
 📁 project-folder
-│
+├── asset
 ├── index.html
 ├── style.css
 ├── script.js
@@ -128,19 +128,9 @@ Untuk menambahkan artikel baru:
 <div class="artikel-footer">...</div>
 ```
 
-⚠️ **Penting:**
-Footer harus di luar `.artikel-content` agar tidak terjadi bug scroll.
 
 ---
 
-## 🐛 Bug yang Sudah Diperbaiki
-
-* Footer ikut scroll ❌ → sekarang fixed ✅
-* Scroll melewati batas card ❌ → sudah diperbaiki ✅
-* Tombol tidak sejajar ❌ → sudah rapi ✅
-* Layout rusak saat konten panjang ❌ → sudah stabil ✅
-
----
 
 ## 🎨 Tampilan
 
@@ -185,8 +175,3 @@ Semoga website ini dapat memberikan manfaat dan meningkatkan kesadaran tentang p
 
 ---
 
-Kalau kamu mau, aku juga bisa bantu:
-
-* bikin **preview screenshot section (biar README lebih keren)**
-* atau bikin **badge GitHub (stars, license, dll)**
-  biar kelihatan lebih profesional 🔥
