@@ -68,6 +68,27 @@ function updateSliderBackground(slider) {
 // Inisialisasi slider background saat halaman dimuat
 updateSliderBackground(sliderBatang);
 
+// ============================================================
+// FUNGSI HANDLE CALL: Smart untuk Desktop & Mobile
+// ============================================================
+function handleCall(phoneNumber) {
+  // Deteksi apakah menggunakan mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Di mobile, buka protocol tel untuk panggil langsung
+    window.location.href = `tel:${phoneNumber}`;
+  } else {
+    // Di desktop, copy nomor ke clipboard dan tampilkan notifikasi
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      alert(`✓ Nomor Quitline.INA (${phoneNumber}) sudah dicopy ke clipboard!\n\nAnda bisa hubungi langsung melalui telepon Anda.`);
+    }).catch(() => {
+      // Fallback jika copy gagal
+      alert(`Nomor Quitline.INA: ${phoneNumber}\n\nSilakan salin nomor ini dan hubungi melalui telepon Anda.`);
+    });
+  }
+}
+
 /**
  * Fungsi format angka ke format Rupiah
  * @param {number} angka - angka yang akan diformat

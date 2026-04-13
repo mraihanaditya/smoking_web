@@ -449,6 +449,154 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
   line-height: 1.7;
 }
 
+/* ── LAYANAN BERHENTI ── */
+.services-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(39,174,96,0.05) 0%, rgba(240,248,245,1) 100%);
+  border-top: 1px solid var(--clr-border);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 48px;
+}
+.service-card {
+  background: var(--clr-surface);
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.service-card:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(39,174,96,0.15);
+}
+.service-icon {
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.service-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin: 0;
+}
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--clr-text-md);
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+.service-contact {
+  background: var(--clr-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  border-left: 4px solid var(--clr-accent);
+}
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-text-lt);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.contact-value {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+.contact-badge {
+  display: inline-block;
+  background: rgba(39,174,96,0.15);
+  color: var(--clr-accent);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-call,
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+.btn-call {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-accent);
+}
+.btn-call:hover {
+  background: var(--clr-accent-d);
+  border-color: var(--clr-accent-d);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39,174,96,0.3);
+}
+.btn-whatsapp {
+  background: #25d366;
+  color: var(--clr-white);
+  border: 2px solid #25d366;
+}
+.btn-whatsapp:hover {
+  background: #1ea952;
+  border-color: #1ea952;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+}
+.service-note {
+  background: rgba(39,174,96,0.08);
+  border-left: 4px solid var(--clr-accent);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.note-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.service-note p {
+  font-size: 0.95rem;
+  color: var(--clr-text-md);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ── KALKULATOR ── */
 .kalkulator-section {
   background: var(--clr-bg-alt);
