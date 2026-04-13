@@ -151,7 +151,7 @@ function tampilkanBisaBeli(perTahun) {
     { icon: '✈️', nama: 'Tiket Pesawat', harga: 900000 },
     { icon: '🍜', nama: 'Makan Siang', harga: 25000 },
     { icon: '📚', nama: 'Buku', harga: 75000 },
-    { icon: '☕', nama: 'Kopi Kafe', harga: 45000 },
+    { icon: '☕', nama: 'Cangkir Kopi', harga: 45000 },
     { icon: '🎮', nama: 'Game PS5', harga: 800000 },
     { icon: '🎬', nama: 'Nonton Bioskop', harga: 50000 },
   ];
