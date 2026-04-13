@@ -656,6 +656,42 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
 .beli-item .beli-icon { font-size: 1.6rem; display: block; margin-bottom: 4px; }
 .beli-item .beli-qty { font-weight: 700; color: var(--clr-accent); font-size: 0.9rem; display: block; }
 
+/* ── BISA BELI ITEM MAHAL (TERPISAH) ── */
+.bisa-beli-mahal {
+  border-top: 1px solid var(--clr-border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+.bisa-beli-mahal h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  margin-bottom: 14px;
+}
+.beli-grid-mahal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.beli-item-mahal {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--clr-bg-dark);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 2px solid var(--clr-gold);
+  box-shadow: 0 4px 12px rgba(243,156,18,0.2);
+}
+.beli-item-mahal:hover { 
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(243,156,18,0.3);
+}
+.beli-item-mahal .beli-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.beli-item-mahal .beli-qty { font-weight: 700; color: var(--clr-primary); font-size: 1.1rem; display: block; margin-bottom: 4px; }
+.beli-item-mahal .beli-waktu { font-size: 0.75rem; color: rgba(0,0,0,0.6); }
+
 /* ── PETA TUBUH ── */
 .peta-section {
   background: var(--clr-bg);

@@ -51,7 +51,7 @@ sliderBatang.addEventListener('input', () => {
 
 // Ketika input angka berubah, update slider
 inputBatang.addEventListener('input', () => {
-  const val = Math.min(Math.max(inputBatang.value, 1), 60);
+  const val = Math.min(Math.max(inputBatang.value, 1), 100);
   sliderBatang.value = val;
   sliderVal.textContent = `${val} batang`;
   updateSliderBackground(sliderBatang);
@@ -156,6 +156,14 @@ function tampilkanBisaBeli(perTahun) {
     { icon: '🎬', nama: 'Nonton Bioskop', harga: 50000 },
   ];
 
+  // Database barang mahal
+  const barangMahal = [
+    { icon: '💍', nama: 'Emas Perhiasan', harga: 50000000 },
+    { icon: '🏍️', nama: 'Motor Sport Mewah', harga: 150000000 },
+    { icon: '🚗', nama: 'Mobil Baru ', harga: 250000000 },
+    { icon: '🏠', nama: 'Rumah di Depok', harga: 300000000 },
+  ];
+
   const beliGrid = document.getElementById('beliGrid');
   beliGrid.innerHTML = '';
 
@@ -166,20 +174,45 @@ function tampilkanBisaBeli(perTahun) {
 
   if (dipilih.length === 0) {
     beliGrid.innerHTML = '<p style="color:var(--clr-text-lt);font-size:0.85rem;grid-column:1/-1;text-align:center;">Masukkan data yang valid untuk melihat simulasi ini.</p>';
-    return;
+  } else {
+    dipilih.forEach(b => {
+      const qty = Math.floor(perTahun / b.harga);
+      const item = document.createElement('div');
+      item.className = 'beli-item';
+      item.innerHTML = `
+        <span class="beli-icon">${b.icon}</span>
+        <span class="beli-qty">${qty}x</span>
+        <span>${b.nama}</span>
+      `;
+      beliGrid.appendChild(item);
+    });
   }
 
-  dipilih.forEach(b => {
-    const qty = Math.floor(perTahun / b.harga);
-    const item = document.createElement('div');
-    item.className = 'beli-item';
-    item.innerHTML = `
-      <span class="beli-icon">${b.icon}</span>
-      <span class="beli-qty">${qty}x</span>
-      <span>${b.nama}</span>
-    `;
-    beliGrid.appendChild(item);
+  // Tampilkan barang mahal - hitung berapa tahun dibutuhkan
+  const beliGridMahal = document.getElementById('beliGridMahal');
+  beliGridMahal.innerHTML = '';
+
+  barangMahal.forEach(b => {
+    // Hitung berapa tahun rokok dibutuhkan untuk mencapai harga barang
+    const tahunDibutuhkan = b.harga / perTahun;
+    
+    // Tampilkan jika realistis (kurang dari 20 tahun)
+    if (tahunDibutuhkan <= 20) {
+      const item = document.createElement('div');
+      item.className = 'beli-item-mahal';
+      item.innerHTML = `
+        <span class="beli-icon">${b.icon}</span>
+        <span class="beli-qty">1x ${b.nama}</span>
+        <span class="beli-waktu">${tahunDibutuhkan.toFixed(1)} Tahun (Rp ${Math.round(b.harga).toLocaleString('id-ID')})</span>
+      `;
+      beliGridMahal.appendChild(item);
+    }
   });
+
+  // Jika tidak ada item mahal yang bisa dibeli, tampilkan pesan
+  if (beliGridMahal.children.length === 0) {
+    beliGridMahal.innerHTML = '<p style="color:var(--clr-text-lt);font-size:0.85rem;grid-column:1/-1;text-align:center;padding:20px;">Tingkatkan budget rokok untuk melihat item premium. Atau lebih baik berhenti merokok! 😊</p>';
+  }
 }
 
 // Hitung otomatis saat halaman pertama dimuat
