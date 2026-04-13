@@ -60,9 +60,9 @@ Data diambil dari sumber terpercaya seperti:
 
 ## 🛠️ Teknologi yang Digunakan
 
-* HTML5
-* CSS3 (Flexbox & Grid)
-* JavaScript (Vanilla JS)
+[![HTML5](https://img.shields.io/badge/HTML5-E34C26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 
@@ -96,37 +96,6 @@ index.html
 ```
 
 4. Bisa langsung dibuka di browser (Chrome/Edge)
-
----
-
-## 🧩 Cara Menambah Artikel
-
-Untuk menambahkan artikel baru:
-
-1. Copy struktur artikel yang sudah ada:
-
-```html
-<article class="artikel-card">
-```
-
-2. Ubah:
-
-* Judul
-* Deskripsi singkat (`artikel-ringkas`)
-* Isi lengkap (`artikel-full`)
-* Kategori (`data-cat`)
-* Link tombol "Baca"
-
-3. Pastikan struktur tetap seperti ini:
-
-```html
-<div class="artikel-content">
-  <p class="artikel-ringkas">...</p>
-  <div class="artikel-full">...</div>
-</div>
-
-<div class="artikel-footer">...</div>
-```
 
 
 ---
