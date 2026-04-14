@@ -701,10 +701,10 @@ window.addEventListener('scroll', () => {
 // 11. EFEK SUARA (AUDIO FEEDBACK)
 // ============================================================
 
-// Menggunakan aset suara gratis dari Google Actions
-const sfxHeartbeat = new Audio('https://actions.google.com/sounds/v1/human_voices/heartbeat.ogg');
-const sfxCough = new Audio('https://actions.google.com/sounds/v1/human_voices/male_cough.ogg');
-const sfxCoins = new Audio('https://actions.google.com/sounds/v1/office/coins_clinking.ogg');
+// Menggunakan aset suara lokal di folder asset
+const sfxHeartbeat = new Audio('asset/heartbeat.mp3');
+const sfxCough     = new Audio('asset/cough.mp3');
+const sfxCoins     = new Audio('asset/coins.mp3');
 
 sfxHeartbeat.volume = 0.6;
 sfxHeartbeat.loop = true; // Jantung berdetak berulang saat di-hover
