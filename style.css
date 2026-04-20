@@ -1136,12 +1136,14 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
 
 /* CARD */
 .video-card-drive {
-  width: 500px;
+  width: 620px;
   background: rgba(182, 0, 0, 0.05);
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(46, 6, 6, 0.2);
   transition: 0.3s;
+  margin: 0 auto;
+
 }
 
 .video-card-drive:hover {
@@ -1151,7 +1153,7 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
 /* FRAME VIDEO */
 .video-frame {
   width: 100%;
-  height: 280px;
+  height: 350px;
   overflow: hidden;
 }
 
