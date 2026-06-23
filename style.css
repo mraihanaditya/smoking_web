@@ -145,19 +145,85 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
   display: flex;
   align-items: center;
   gap: 32px;
-  padding: 16px 24px;
+  padding: 20px 24px;
   max-width: 1180px;
   margin: 0 auto;
 }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-family: var(--ff-display);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   color: var(--clr-text);
   flex-shrink: 0;
+}
+.nav-logo-img {
+  height: 96px;
+  width: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin-left: auto;
+}
+.nav-links a {
+  font-size: 1rem;  /* Increased from 0.9rem */
+  font-weight: 500;
+  color: var(--clr-text-md);
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--clr-primary); }
+
+.nav-cta {
+  background: var(--clr-primary);
+  color: #fff;
+  padding: 12px 24px;  /* Increased padding */
+  border-radius: 50px;
+  font-size: 0.95rem;  /* Increased from 0.85rem */
+  font-weight: 600;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.nav-cta:hover {
+  background: var(--clr-primary-d);
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;  /* Increased gap */
+  margin-left: auto;
+  padding: 6px;  /* Increased padding */
+}
+.hamburger span {
+  display: block;
+  width: 28px;  /* Increased from 24px */
+  height: 3px;  /* Increased from 2px */
+  background: var(--clr-text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 1.3rem; /* Slightly larger to match bigger logo */
+  color: var(--clr-text);
+  flex-shrink: 0;
+}
+.nav-logo-img {
+  height: 96px; /* 3x original 32px */
+  width: auto;
+}
+.footer-logo-img {
+  height: 48px; /* 1.5x original 32px for footer */
+  width: auto;
 }
 .logo-dot {
   width: 10px; height: 10px;
@@ -229,7 +295,7 @@ button { cursor: pointer; font-family: var(--ff-body); border: none; background:
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 24px 80px;
+  padding: 170px 24px 80px; /* Increased from 120px to 170px to accommodate taller navbar */
   max-width: 1180px;
   margin: 0 auto;
   gap: 60px;
